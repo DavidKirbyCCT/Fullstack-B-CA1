@@ -8,6 +8,8 @@ const expressLayouts = require("express-ejs-layouts");
 
 // routes
 const loginRoutes = require("./routes/login");
+const createAccountRoutes = require("./routes/create-account");
+const playRoutes = require("./routes/play");
 
 const app = express();
 const PORT = 3000;
@@ -18,7 +20,7 @@ app.use(expressLayouts);
 app.set("layout", "layout");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/bestBlog")
+  .connect("mongodb://127.0.0.1:27017/fullstackBCA1")
   .then((conn) => console.log(conn.models));
 
 app.use(
@@ -39,7 +41,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/", loginRoutes);
+app.use("/login", loginRoutes);
+app.use("/create-account", createAccountRoutes);
+app.use("/play", playRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

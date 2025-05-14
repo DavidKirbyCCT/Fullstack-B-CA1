@@ -12,7 +12,7 @@ const userSchema = new Schema({
 userSchema.plugin(passportLocalMongoose);
 
 // Helper db object
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("users", userSchema);
 
 
 module.exports = {
