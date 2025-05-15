@@ -1,0 +1,8 @@
+#game-board {
+    gap: 10px;
+}
+.game-tile {
+    flex: 0 0 9%;
+    height: 60px;
+    width: 60px;
+}
