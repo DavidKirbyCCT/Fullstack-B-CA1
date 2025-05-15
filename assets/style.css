@@ -6,3 +6,8 @@
     height: 60px;
     width: 60px;
 }
+
+.game-tile:hover {
+    background-color: var(--bs-secondary) !important;
+    cursor: pointer;
+}
